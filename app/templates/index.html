@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ChurnGuard - Customer Churn Risk Assessment</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="navbar-inner">
+
+            <a href="/" class="navbar-brand">
+
+                <div class="brand-icon">
+                    &#10003;
+                </div>
+
+                ChurnGuard
+
+                <span class="brand-dot"></span>
+
+            </a>
+
+
+            <button class="navbar-toggle"
+                    onclick="document.querySelector('.navbar-center').classList.toggle('open')">
+
+                &#9776;
+
+            </button>
+
+
+            <div class="navbar-center">
+
+                <a href="/" class="active">
+                    Home
+                </a>
+
+                <a href="/form/banking">
+                    Banking
+                </a>
+
+                <a href="/form/telecom">
+                    Telecom
+                </a>
+
+                <a href="/form/ecommerce">
+                    E-commerce
+                </a>
+
+            </div>
+
+
+            <a href="/contact"
+               class="navbar-cta">
+
+                Contact Us
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Hero -->
+
+    <section class="hero-section">
+
+        <div class="hero-badge">
+            MACHINE LEARNING DECISION SUPPORT SYSTEM
+        </div>
+
+
+        <h1 class="hero-title">
+
+            Identify Customer Churn Risk<br>
+
+            <span class="green">
+                Before It Becomes a Problem
+            </span>
+
+        </h1>
+
+
+        <p class="hero-desc">
+
+            ChurnGuard uses machine learning models to
+            assess customer churn risk across Banking,
+            Telecom and E-commerce domains, helping
+            organizations identify customers who may
+            require retention attention.
+
+        </p>
+
+
+        <a href="#sectors"
+           class="hero-btn">
+
+            Explore Industry Models &#8594;
+
+        </a>
+
+    </section>
+
+
+    <!-- Main Content -->
+
+    <div class="content-wrapper">
+
+
+        <!-- Process -->
+
+        <div class="steps-grid">
+
+
+            <div class="step-card">
+
+                <div class="step-header">
+
+                    <span class="step-num">
+                        1
+                    </span>
+
+                    <h3>
+                        Select Business Domain
+                    </h3>
+
+                </div>
+
+
+                <p>
+
+                    Select the business area being
+                    assessed: Banking, Telecom or
+                    E-commerce.
+
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-header">
+
+                    <span class="step-num">
+                        2
+                    </span>
+
+                    <h3>
+                        Enter Customer Data
+                    </h3>
+
+                </div>
+
+
+                <p>
+
+                    Provide the relevant customer
+                    account, service or behavioral
+                    information required by the
+                    selected model.
+
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-header">
+
+                    <span class="step-num">
+                        3
+                    </span>
+
+                    <h3>
+                        Assess Churn Risk
+                    </h3>
+
+                </div>
+
+
+                <p>
+
+                    The trained machine learning model
+                    generates a churn probability and
+                    classifies the customer profile into
+                    a risk category.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Domain Cards -->
+
+        <div class="domain-grid"
+             id="sectors">
+
+
+            <a href="/form/banking"
+               class="domain-card">
+
+                <div class="domain-icon">
+                    &#127974;
+                </div>
+
+
+                <h3>
+                    Banking
+                </h3>
+
+
+                <p>
+
+                    Assess customer churn risk using
+                    account profile, financial and
+                    engagement-related information.
+
+                </p>
+
+
+                <div class="domain-tags">
+
+                    <span class="tag tag-neutral">
+                        Customer Risk
+                    </span>
+
+                    <span class="tag tag-success">
+                        ML Prediction
+                    </span>
+
+                    <span class="tag tag-success">
+                        Risk Scoring
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a href="/form/telecom"
+               class="domain-card">
+
+                <div class="domain-icon">
+                    &#128225;
+                </div>
+
+
+                <h3>
+                    Telecom
+                </h3>
+
+
+                <p>
+
+                    Assess subscriber churn risk using
+                    service, contract, billing and
+                    customer relationship information.
+
+                </p>
+
+
+                <div class="domain-tags">
+
+                    <span class="tag tag-neutral">
+                        Subscriber Risk
+                    </span>
+
+                    <span class="tag tag-warning">
+                        Risk Scoring
+                    </span>
+
+                    <span class="tag tag-success">
+                        ML Prediction
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a href="/form/ecommerce"
+               class="domain-card">
+
+                <div class="domain-icon">
+                    &#128722;
+                </div>
+
+
+                <h3>
+                    E-commerce
+                </h3>
+
+
+                <p>
+
+                    Assess customer churn risk using
+                    purchase frequency, spending,
+                    recency, reviews and delivery
+                    behavior.
+
+                </p>
+
+
+                <div class="domain-tags">
+
+                    <span class="tag tag-neutral">
+                        Customer Behavior
+                    </span>
+
+                    <span class="tag tag-danger">
+                        Churn Risk
+                    </span>
+
+                    <span class="tag tag-success">
+                        ML Prediction
+                    </span>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+        <!-- Goal Section -->
+
+        <section class="goal-section"
+                 id="goal">
+
+
+            <div class="goal-content">
+
+                <span class="badge">
+                    PROJECT GOAL
+                </span>
+
+
+                <h2>
+
+                    Help Organizations Identify
+                    Customers at Risk of Churn
+
+                </h2>
+
+
+                <p>
+
+                    ChurnGuard is designed as a
+                    machine learning based decision
+                    support system. It analyzes
+                    customer information and provides
+                    a churn probability and risk
+                    classification that can support
+                    retention planning.
+
+                </p>
+
+
+                <div class="goal-stats">
+
+
+                    <div class="goal-stat">
+
+                        <h3>
+                            3
+                        </h3>
+
+                        <p>
+                            Business Domains
+                        </p>
+
+                    </div>
+
+
+                    <div class="goal-stat">
+
+                        <h3>
+                            ML
+                        </h3>
+
+                        <p>
+                            Prediction Based
+                        </p>
+
+                    </div>
+
+
+                    <div class="goal-stat">
+
+                        <h3>
+                            3
+                        </h3>
+
+                        <p>
+                            Risk Categories
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Trust / Privacy -->
+
+        <section class="trust-section">
+
+            <p>
+
+                Designed for business and provider-side
+                customer retention analysis
+
+            </p>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+
+            <div>
+
+                <div class="footer-brand">
+
+                    <svg width="18"
+                         height="18"
+                         viewBox="0 0 24 24"
+                         fill="currentColor">
+
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+
+                    </svg>
+
+                    ChurnGuard
+
+                </div>
+
+
+                <p class="footer-copy">
+
+                    &copy; 2026 ChurnGuard.
+                    All rights reserved.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="/form/banking">
+                    Banking Model
+                </a>
+
+                <a href="/form/telecom">
+                    Telecom Intelligence
+                </a>
+
+                <a href="/form/ecommerce">
+                    E-commerce Engine
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

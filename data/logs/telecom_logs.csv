@@ -1,0 +1,8 @@
+name,dob,Gender,SeniorCitizen,Partner,Dependents,TenureMonths,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges,CLTV,predicted_churn,churn_probability,actual_outcome,timestamp
+Shouvik Bhattacharjee,2005-04-07,Male,No,No,No,6,Yes,No,Fiber optic,Yes,Yes,Yes,No,No,Yes,Month-to-month,Yes,Bank transfer (automatic),80,499.49,7550,0,35.71,,2026-09-10 18:39:04
+Priya Sharma,2005-04-07,Female,No,Yes,Yes,6,Yes,No,DSL,No,No,No,No,No,No,Month-to-month,Yes,Mailed check,24,144,4500,0,13.78,,2026-09-10 19:04:11
+Shouvik Bhattacharjee,2000-01-01,Male,Yes,No,No,4,Yes,Yes,No,No,No,No,No,No,No,Month-to-month,Yes,Electronic check,10,40,2500,0,31.3,,2026-09-10 19:05:27
+Priya Sharma,2005-07-04,Female,No,No,No,24,Yes,No,Fiber optic,No,Yes,No,No,Yes,Yes,One year,Yes,Electronic check,85,2040,4200,0,34.58,,2026-09-10 19:08:41
+Priya Sharma,1970-04-07,Female,Yes,No,No,2,Yes,No,Fiber optic,No,No,No,No,No,No,Month-to-month,Yes,Electronic check,95,190,3000,1,80.2,,2026-09-10 19:10:20
+Priya Sharma,2000-04-07,Female,No,No,No,8,Yes,No,Fiber optic,No,Yes,No,No,Yes,Yes,Month-to-month,Yes,Electronic check,85,680,4000,1,68.61,,2026-09-10 19:13:55
+TEL-TEST-001,Female,No,No,No,8,Yes,No,Fiber optic,No,Yes,No,No,Yes,Yes,Month-to-month,Yes,Electronic check,85,680,4000,1,68.61,,2026-09-10 21:13:51

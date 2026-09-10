@@ -1,0 +1,6 @@
+name,gender,product_type,days_since_last_purchase,total_orders,total_spending,average_review_score,average_delivery_days,late_delivery_count,number_of_reviews,predicted_churn,churn_probability,actual_outcome,timestamp
+Shouvik Bhattacharjee,Male,Electronics,80,2,100,3,10,1,0,0,47.54,,2026-09-10 18:43:11
+Priya Sharma,Female,Beauty,150,1,100,3,10,1,0,1,53.19,,2026-09-10 18:44:15
+Shouvik Bhattacharjee,Male,Home Appliance,300,1,50,2,7,1,0,1,64.87,,2026-09-10 18:45:22
+Shouvik Bhattacharjee,Male,Home Appliance,300,1,50,2,10,1,0,1,64.87,,2026-09-10 19:02:22
+ECOM-TEST-001,140,1,101.02,5,11,0,1,0,41.13,,2026-09-10 21:22:05

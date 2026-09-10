@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Churn Risk Assessment - ChurnGuard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="navbar-inner">
+
+            <a href="/" class="navbar-brand">
+
+                <div class="brand-icon">&#10003;</div>
+
+                ChurnGuard
+
+                <span class="brand-dot"></span>
+
+            </a>
+
+
+            <button class="navbar-toggle"
+                    onclick="document.querySelector('.navbar-center').classList.toggle('open')">
+
+                &#9776;
+
+            </button>
+
+
+            <div class="navbar-center">
+
+                <a href="/">Home</a>
+
+                <a href="/form/banking">
+                    Banking
+                </a>
+
+                <a href="/form/telecom">
+                    Telecom
+                </a>
+
+                <a href="/form/ecommerce">
+                    E-commerce
+                </a>
+
+            </div>
+
+
+            <a href="/contact"
+               class="navbar-cta">
+
+                Contact Us
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="main-content"
+          style="padding-top: 80px;">
+
+        <div class="result-box">
+
+            <p class="subtitle">
+                {{ domain }} Domain Analysis
+            </p>
+
+
+            <h1>
+                Churn Risk Assessment
+            </h1>
+
+
+            {% if customer_reference %}
+
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;">
+
+                    Customer Reference:
+                    <strong>
+                        {{ customer_reference }}
+                    </strong>
+
+                </p>
+
+            {% endif %}
+
+
+            <!-- Risk Classification -->
+
+            {% if probability >= 70 %}
+
+                {% set risk_level = 'High Risk' %}
+                {% set risk_color = '#dc2626' %}
+
+            {% elif probability >= 40 %}
+
+                {% set risk_level = 'Medium Risk' %}
+                {% set risk_color = '#f59e0b' %}
+
+            {% else %}
+
+                {% set risk_level = 'Low Risk' %}
+                {% set risk_color = '#16a34a' %}
+
+            {% endif %}
+
+
+            <!-- Risk Badge -->
+
+            <div class="result-badge"
+                 style="background: {{ risk_color }}; color: #fff;">
+
+                &#9888; {{ risk_level }}
+
+            </div>
+
+
+            <!-- Probability -->
+
+            <p>
+
+                Churn Probability:
+
+                <strong>
+                    {{ probability }}%
+                </strong>
+
+            </p>
+
+
+            <!-- Model Prediction -->
+
+            <p style="font-size: 0.8rem;">
+
+                Model Classification:
+
+                <strong>
+
+                    {% if churn %}
+                        Likely to Churn
+                    {% else %}
+                        Less Likely to Churn
+                    {% endif %}
+
+                </strong>
+
+            </p>
+
+
+            <!-- Probability Bar -->
+
+            <div class="probability-bar">
+
+                <div class="probability-fill"
+                     style="width: {{ probability }}%;
+                            background: {{ risk_color }};">
+
+                    {{ probability }}%
+
+                </div>
+
+            </div>
+
+
+            <!-- Risk Explanation -->
+
+            {% if probability >= 70 %}
+
+                <p class="recommendation">
+
+                    This customer profile shows a high likelihood
+                    of churn. Prioritize proactive retention
+                    intervention, personalized engagement and
+                    appropriate retention offers.
+
+                </p>
+
+            {% elif probability >= 40 %}
+
+                <p class="recommendation">
+
+                    This customer profile shows a moderate
+                    likelihood of churn. Consider targeted
+                    engagement and retention strategies and
+                    continue monitoring customer activity.
+
+                </p>
+
+            {% else %}
+
+                <p class="recommendation">
+
+                    This customer profile shows a relatively low
+                    likelihood of churn. Continue regular
+                    engagement and monitor changes in customer
+                    behavior.
+
+                </p>
+
+            {% endif %}
+
+
+            <!-- Disclaimer -->
+
+            <p class="disclaimer">
+
+                Note: This prediction is based on patterns
+                learned from historical customer data.
+                Actual customer behavior may vary.
+
+            </p>
+
+
+            <!-- Back -->
+
+            <a href="/"
+               class="back-link"
+               style="margin-top: 1.5rem;">
+
+                &#8592; Assess another customer
+
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+            <div>
+
+                <div class="footer-brand">
+
+                    <svg width="18"
+                         height="18"
+                         viewBox="0 0 24 24"
+                         fill="currentColor">
+
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+
+                    </svg>
+
+                    ChurnGuard
+
+                </div>
+
+                <p class="footer-copy">
+
+                    &copy; 2026 ChurnGuard.
+                    All rights reserved.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="/form/banking">
+                    Banking Model
+                </a>
+
+                <a href="/form/telecom">
+                    Telecom Intelligence
+                </a>
+
+                <a href="/form/ecommerce">
+                    E-commerce Engine
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

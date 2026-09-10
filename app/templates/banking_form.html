@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Banking Risk Assessment - ChurnGuard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-inner">
+
+            <a href="/" class="navbar-brand">
+                <div class="brand-icon">&#10003;</div>
+                ChurnGuard
+                <span class="brand-dot"></span>
+            </a>
+
+            <button class="navbar-toggle"
+                    onclick="document.querySelector('.navbar-center').classList.toggle('open')">
+                &#9776;
+            </button>
+
+            <div class="navbar-center">
+                <a href="/">Home</a>
+                <a href="/form/banking" class="active">Banking</a>
+                <a href="/form/telecom">Telecom</a>
+                <a href="/form/ecommerce">E-commerce</a>
+            </div>
+
+            <a href="/contact" class="navbar-cta">
+                Contact Us
+            </a>
+
+        </div>
+    </nav>
+
+
+    <main class="main-content" style="padding-top: 80px;">
+
+        <a href="/" class="back-link">
+            &#8592; Back to Home
+        </a>
+
+        <div class="form-card">
+
+            <h1>&#127974; Banking Churn Risk Assessment</h1>
+
+            <p class="subtitle">
+                Analyze customer account information to assess potential churn risk.
+            </p>
+
+
+            {% if error %}
+                <div class="validation-error" role="alert">
+                    &#9888; {{ error }}
+                </div>
+                {% endif %}
+
+                <form action="/predict/banking" method="POST">
+
+                <!-- Internal reference -->
+                <div class="form-group">
+                    <label>Customer Reference ID (Optional)</label>
+
+                    <input type="text"
+                           name="customer_reference"
+                           placeholder="e.g. BANK-10245">
+
+                    <small style="color: #5a6b60;">
+                        Use an internal reference instead of entering the customer's name.
+                    </small>
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Date of Birth</label>
+
+                        <input type="date"
+                               name="DateOfBirth"
+                               required>
+
+                        <small style="color: #5a6b60;">
+                            Age will be calculated automatically from the date of birth.
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Gender</label>
+
+                        <select name="Gender" required>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Geography</label>
+
+                        <select name="Geography" required>
+
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Spain">Spain</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Credit Score</label>
+
+                        <input type="number"
+                               name="CreditScore"
+                               min="300"
+                               max="900"
+                               required
+                               placeholder="e.g. 650">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Tenure (years with bank)</label>
+
+                        <input type="number"
+                               name="Tenure"
+                               min="0"
+                               max="20"
+                               required
+                               placeholder="e.g. 5">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Account Balance</label>
+
+                        <input type="number"
+                               step="0.01"
+                               name="Balance"
+                               min="0"
+                               required
+                               placeholder="e.g. 50000">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Number of Products</label>
+
+                        <select name="NumOfProducts" required>
+
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Estimated Salary</label>
+
+                        <input type="number"
+                               step="0.01"
+                               name="EstimatedSalary"
+                               min="0"
+                               required
+                               placeholder="e.g. 50000">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Has Credit Card?</label>
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input type="radio"
+                                       name="HasCrCard"
+                                       value="1"
+                                       required>
+                                Yes
+                            </label>
+
+                            <label>
+                                <input type="radio"
+                                       name="HasCrCard"
+                                       value="0">
+                                No
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Is Active Member?</label>
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input type="radio"
+                                       name="IsActiveMember"
+                                       value="1"
+                                       required>
+                                Yes
+                            </label>
+
+                            <label>
+                                <input type="radio"
+                                       name="IsActiveMember"
+                                       value="0">
+                                No
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit"
+                        class="submit-btn">
+                    Assess Churn Risk
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+            <div>
+
+                <div class="footer-brand">
+
+                    <svg width="18"
+                         height="18"
+                         viewBox="0 0 24 24"
+                         fill="currentColor">
+
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+
+                    </svg>
+
+                    ChurnGuard
+
+                </div>
+
+                <p class="footer-copy">
+                    &copy; 2026 ChurnGuard. All rights reserved.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="/form/banking">
+                    Banking Model
+                </a>
+
+                <a href="/form/telecom">
+                    Telecom Intelligence
+                </a>
+
+                <a href="/form/ecommerce">
+                    E-commerce Engine
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

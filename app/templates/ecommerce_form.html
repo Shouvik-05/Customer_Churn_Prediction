@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>E-commerce Risk Assessment - ChurnGuard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="navbar-inner">
+
+            <a href="/" class="navbar-brand">
+
+                <div class="brand-icon">&#10003;</div>
+
+                ChurnGuard
+
+                <span class="brand-dot"></span>
+
+            </a>
+
+
+            <button class="navbar-toggle"
+                    onclick="document.querySelector('.navbar-center').classList.toggle('open')">
+
+                &#9776;
+
+            </button>
+
+
+            <div class="navbar-center">
+
+                <a href="/">Home</a>
+
+                <a href="/form/banking">
+                    Banking
+                </a>
+
+                <a href="/form/telecom">
+                    Telecom
+                </a>
+
+                <a href="/form/ecommerce"
+                   class="active">
+                    E-commerce
+                </a>
+
+            </div>
+
+
+            <a href="/contact"
+               class="navbar-cta">
+                Contact Us
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="main-content"
+          style="padding-top: 80px;">
+
+        <a href="/" class="back-link">
+            &#8592; Back to Home
+        </a>
+
+
+        <div class="form-card">
+
+            <h1>
+                &#128722; E-commerce Churn Risk Assessment
+            </h1>
+
+            <p class="subtitle">
+                Analyze customer purchase and service behavior to assess potential churn risk.
+            </p>
+
+
+            {% if error %}
+                <div class="validation-error" role="alert">
+                    &#9888; {{ error }}
+                </div>
+                {% endif %}
+
+                <form action="/predict/ecommerce"
+                  method="POST">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Customer Reference ID (Optional)
+                    </label>
+
+                    <input type="text"
+                           name="customer_reference"
+                           placeholder="e.g. ECOM-78214">
+
+                    <small style="color: #5a6b60;">
+                        Use an internal reference instead of entering the customer's name.
+                    </small>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Days Since Last Purchase
+                        </label>
+
+                        <input type="number"
+                               name="days_since_last_purchase"
+                               min="0"
+                               required
+                               placeholder="e.g. 30">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Approximate Total Orders
+                        </label>
+
+                        <input type="number"
+                               name="total_orders"
+                               min="0"
+                               required
+                               placeholder="e.g. 5">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Approximate Total Spending ($)
+                        </label>
+
+                        <input type="number"
+                               step="0.01"
+                               name="total_spending"
+                               min="0"
+                               required
+                               placeholder="e.g. 250">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Average Review Score (1-5)
+                        </label>
+
+                        <select name="average_review_score"
+                                required>
+
+                            <option value="">
+                                Select rating
+                            </option>
+
+                            <option value="1">
+                                1 - Very Bad
+                            </option>
+
+                            <option value="2">
+                                2 - Bad
+                            </option>
+
+                            <option value="3">
+                                3 - Average
+                            </option>
+
+                            <option value="4">
+                                4 - Good
+                            </option>
+
+                            <option value="5">
+                                5 - Excellent
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Average Delivery Time (days)
+                        </label>
+
+                        <input type="number"
+                               step="0.1"
+                               name="average_delivery_days"
+                               min="0"
+                               required
+                               placeholder="e.g. 7">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Number of Late Deliveries
+                        </label>
+
+                        <input type="number"
+                               name="late_delivery_count"
+                               min="0"
+                               required
+                               placeholder="e.g. 1">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Number of Reviews Written
+                    </label>
+
+                    <input type="number"
+                           name="number_of_reviews"
+                           min="0"
+                           required
+                           placeholder="e.g. 3">
+
+                </div>
+
+
+                <button type="submit"
+                        class="submit-btn">
+
+                    Assess Churn Risk
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+            <div>
+
+                <div class="footer-brand">
+
+                    <svg width="18"
+                         height="18"
+                         viewBox="0 0 24 24"
+                         fill="currentColor">
+
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+
+                    </svg>
+
+                    ChurnGuard
+
+                </div>
+
+                <p class="footer-copy">
+                    &copy; 2026 ChurnGuard. All rights reserved.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="/form/banking">
+                    Banking Model
+                </a>
+
+                <a href="/form/telecom">
+                    Telecom Intelligence
+                </a>
+
+                <a href="/form/ecommerce">
+                    E-commerce Engine
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

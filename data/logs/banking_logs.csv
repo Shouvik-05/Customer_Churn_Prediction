@@ -1,0 +1,7 @@
+name,dob,Age,Gender,Geography,CreditScore,Tenure,Balance,NumOfProducts,EstimatedSalary,HasCrCard,IsActiveMember,CardType,SatisfactionScore,PointEarned,predicted_churn,churn_probability,actual_outcome,timestamp
+subha,2026-08-25,22,Male,France,300,10,999.99,2,10000,0,0,SILVER,1,7,0,33.69,,2026-08-25 18:44:35
+subha,2026-09-01,21,Male,France,500,2,50000,2,199999.82,0,0,SILVER,1,100,0,19.62,,2026-09-01 11:48:55
+BANK-TEST-001,600,45,Male,Germany,3,100000,1,1,0,50000,1,67.47,,2026-09-10 21:18:28
+BANK-TEST-001,600.0,45,Male,Germany,3.0,100000.0,3,1,0,50000.0,1,97.45,,2026-09-10 22:07:55
+BANK-TEST-002,600.0,45,Male,Germany,3.0,10000.0,1,1,0,50000.0,0,35.24,,2026-09-10 22:12:45
+BANK-TEST-003,600.0,45,Male,Germany,3.0,100000.0,1,1,0,50000.0,1,67.47,,2026-09-10 22:15:16

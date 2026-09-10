@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ChurnGuard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/" class="navbar-brand">
+                <div class="brand-icon">&#10003;</div>
+                ChurnGuard
+                <span class="brand-dot"></span>
+            </a>
+            
+            <button class="navbar-toggle" onclick="document.querySelector('.navbar-center').classList.toggle('open')">&#9776;</button>
+            <div class="navbar-center">
+                <a href="/">Home</a>
+                <a href="/form/banking">Banking</a>
+                <a href="/form/telecom">Telecom</a>
+                <a href="/form/ecommerce">E-commerce</a>
+            </div>
+            <div class="navbar-right">
+                <a href="/contact" class="navbar-cta">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content" style="padding-top: 80px;">
+        <!-- Hero -->
+        <div style="text-align:center; max-width:700px; margin:0 auto 3rem;">
+            <div class="hero-badge">&#128737; Support & Customer Success</div>
+            <h1 class="hero-title" style="font-size:2.5rem;">
+                Contact the ChurnGuard<br>Support Team
+            </h1>
+            <p class="hero-desc">
+                Need assistance with your predictive telemetry, API integrations, or churn models? Reach out directly to our dedicated support teams.
+            </p>
+        </div>
+
+        <!-- How to Contact -->
+        <div class="contact-howto">
+            <div class="howto-header">
+                <h2>&#10003;&#65039; How to Contact the Support Team</h2>
+                
+            </div>
+            <div class="howto-steps">
+                <div class="howto-step">
+                    <div class="step-num">1</div>
+                    <h3>Choose Your Channel</h3>
+                    <p>Select General Help, Banking Core, Telecom CDR, or E-Commerce stream to route directly to specialist engineers.</p>
+                </div>
+                <div class="howto-step">
+                    <div class="step-num">2</div>
+                    <h3>Have Account ID Ready</h3>
+                    <p>Providing your Tenant ID or API key prefix accelerates triage, trace analysis, and model telemetry debugging.</p>
+                </div>
+                <div class="howto-step">
+                    <div class="step-num">3</div>
+                    <h3>Connect Instantly</h3>
+                    <p>Connect via phone hotlines, dedicated departmental email, or submit a quick message ticket below.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="contact-grid">
+            <!-- Left Column -->
+            <div class="contact-left">
+                <!-- Phone Numbers -->
+                <div class="contact-card">
+                    <h2>&#128222; Direct Support Phone Numbers</h2>
+                    <div class="phone-item">
+                        <div>
+                            <strong>Primary Support Line</strong>
+                            <span class="badge-success">Available 24/7/365</span>
+                            <p>+1 (800) 492-CHURN (+1 800 492-2487)</p>
+                        </div>
+                        <a href="tel:+18004922487" class="btn-call">&#128222; Call Now</a>
+                    </div>
+                    <div class="phone-item">
+                        <div>
+                            <strong>Urgent Escalations Hotline</strong>
+                            <span class="badge-danger">Production Models</span>
+                            <p>+1 (888) 724-RISK</p>
+                            <p style="font-size:0.75rem; color:var(--text-muted);">Priority triage for live production churn models</p>
+                        </div>
+                        <a href="tel:+18887247475" class="btn-call-red">&#128222; Call Hotline</a>
+                    </div>
+                    <div class="phone-item">
+                        <div>
+                            <strong>International Toll-Free / EMEA</strong>
+                            <span class="badge-muted">Mon - Fri: 8 AM - 8 PM GMT</span>
+                            <p>+44 20 7946 0910</p>
+                        </div>
+                        <a href="tel:+442079460910" class="btn-call">&#128222; Call EMEA</a>
+                    </div>
+                </div>
+
+                <!-- Email Directory -->
+                <div class="contact-card">
+                    <div class="email-header">
+                        <h2>&#9993; Dedicated Support Email Directory</h2>
+                        <span class="click-compose">Click to compose</span>
+                    </div>
+                    <div class="email-grid">
+                        <div class="email-item">
+                            <span class="email-dot" style="background:#16a34a;"></span>
+                            <div>
+                                <strong>General Support</strong>
+                                <a href="mailto:support@churnguard.ai">support@churnguard.ai</a>
+                                <p>Billing, account setup, and general queries</p>
+                            </div>
+                        </div>
+                        <div class="email-item">
+                            <span class="email-dot" style="background:#16a34a;"></span>
+                            <div>
+                                <strong>Banking Telemetry</strong>
+                                <a href="mailto:banking-support@churnguard.ai">banking-support@churnguard.ai</a>
+                                <p>Plaid, ISO 20022, and core ledger sync</p>
+                            </div>
+                        </div>
+                        <div class="email-item">
+                            <span class="email-dot" style="background:#3b82f6;"></span>
+                            <div>
+                                <strong>Telecom Stream</strong>
+                                <a href="mailto:telecom-support@churnguard.ai">telecom-support@churnguard.ai</a>
+                                <p>CDR pipeline, Kafka, 5G edge latency</p>
+                            </div>
+                        </div>
+                        <div class="email-item">
+                            <span class="email-dot" style="background:#16a34a;"></span>
+                            <div>
+                                <strong>E-Commerce Support</strong>
+                                <a href="mailto:ecommerce-support@churnguard.ai">ecommerce-support@churnguard.ai</a>
+                                <p>Snowflake, Segment, behavioral tracking</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Contact Form -->
+            <div class="contact-right">
+                <div class="contact-form-card">
+                    <h2>&#10148; Send a Quick Message</h2>
+                    <p class="form-subtitle">Submit your inquiry directly to our on-call support team.</p>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="e.g. Sarah Jenkins" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Work Email</label>
+                            <input type="email" placeholder="sarah.jenkins@enterprise.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>How can we help you?</label>
+                            <textarea rows="5" placeholder="Describe your issue, model telemetry question, or integration request..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message &#8594;</button>
+                        <p class="form-note">&#128274; Responses routed in &lt; 15 mins for active enterprise SLAs</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    ChurnGuard
+                </div>
+                <p class="footer-copy">&copy; 2026 ChurnGuard Inc. Telemetry-driven customer intelligence. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="/form/banking">Banking SLA</a>
+                <a href="/form/telecom">Telecom Protocols</a>
+                <a href="/form/ecommerce">E-Commerce Security</a>
+                <a href="#">SOC2 Type II</a>
+                <a href="#">Privacy Policy</a>
+                <a href="/contact">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
